@@ -5,23 +5,19 @@ import time
 url = 'https://dynamic-traffic-light-default-rtdb.firebaseio.com'
 firebase = firebase.FirebaseApplication(url, None)
 
-
-
-
-
 while True:
-    selatan=randint(0,20)
-    barat=randint(0,20)
-    timur=randint(0,20)
-    utara=randint(0,20)
+    south=randint(0,20)
+    west=randint(0,20)
+    east=randint(0,20)
+    north=randint(0,20)
     dct_car={
-    'selatan':selatan,
-    'barat':barat,
-    'timur':timur,
-    'utara':utara
+    'south':south,
+    'west':west,
+    'east':east,
+    'north':north
     }
     # result = firebase.patch('/Duration/ruas-barat/', {"duration": randint(0, 20)})
-    result = firebase.patch('/Vehicle/ruas/', dct_car)
+    result = firebase.patch('/Vehicle/road/', dct_car)
     # result1 = firebase.patch('/Vehicle/ruas-barat/', data["barat"])
     # result3 = firebase.patch('/Vehicle/ruas-timur/', data["timur"])
     # result4 = firebase.patch('/Vehicle/ruas-utara/', data["utara"])
